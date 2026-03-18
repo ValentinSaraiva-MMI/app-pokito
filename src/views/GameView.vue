@@ -41,11 +41,11 @@ const opponents = computed(() => gameStore.otherPlayers)
 </script>
 
 <template>
-  <div class="relative w-full h-screen overflow-hidden bg-gradient-to-b from-gray-950 to-felt-900">
+  <div class="relative w-full h-screen overflow-hidden">
     <!-- Table ovale -->
-    <div class="absolute inset-8 lg:inset-16 rounded-[50%] bg-felt-800 border-8 border-yellow-900/50 shadow-inner shadow-black/50">
-      <!-- Inner felt ring -->
-      <div class="absolute inset-4 rounded-[50%] border-2 border-felt-700/50"></div>
+    <div class="absolute inset-8 lg:inset-16 rounded-[100px] lg:rounded-[200px] bg-pokito-bg/60 backdrop-blur-sm border-[10px] border-pokito-dark shadow-2xl shadow-black">
+      <!-- Inner ring -->
+      <div class="absolute inset-4 rounded-[80px] lg:rounded-[180px] border-2 border-cream-500/10"></div>
     </div>
 
     <!-- Pot central -->
@@ -67,7 +67,7 @@ const opponents = computed(() => gameStore.otherPlayers)
     <!-- Joueur local (bas centre) -->
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pb-2">
       <!-- Info joueur local -->
-      <div v-if="gameStore.myPlayer" class="flex items-center gap-2 mb-1">
+      <div v-if="gameStore.myPlayer" class="flex items-center gap-3 mb-2 bg-pokito-dark/80 px-4 py-2 rounded-full border border-pokito-light backdrop-blur-sm">
         <img
           :src="userStore.avatar || `https://api.dicebear.com/9.x/adventurer/svg?seed=${encodeURIComponent(userStore.pseudo)}`"
           :alt="userStore.pseudo"

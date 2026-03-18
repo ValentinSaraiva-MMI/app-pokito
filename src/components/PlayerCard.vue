@@ -37,30 +37,30 @@ const playerCards = computed(() => props.player.cards || [])
       <!-- Indicateur tour -->
       <div
         v-if="isCurrentPlayer && !player.isFolded"
-        class="absolute -inset-1 rounded-full bg-gold-400/30 animate-pulse"
+        class="absolute -inset-1 rounded-full bg-cream-500/30 animate-pulse"
       ></div>
 
       <img
         :src="player.avatar || getAvatarUrl(player.pseudo)"
         :alt="player.pseudo"
         class="w-12 h-12 rounded-full border-2 relative z-10"
-        :class="isCurrentPlayer ? 'border-gold-400' : 'border-gray-600'"
+        :class="isCurrentPlayer ? 'border-cream-500 shadow-[0_0_15px_rgba(252,236,180,0.5)]' : 'border-pokito-light'"
       />
 
       <!-- Badge couché -->
       <span
         v-if="player.isFolded"
-        class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full z-20 whitespace-nowrap"
+        class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-mexican-red text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full z-20 whitespace-nowrap"
       >
         Couché
       </span>
     </div>
 
     <!-- Pseudo + chips -->
-    <p class="text-white text-xs font-semibold truncate max-w-[100px] text-center">
+    <p class="text-white text-xs font-semibold truncate max-w-[100px] text-center mt-1 bg-pokito-dark/80 px-2 rounded-md">
       {{ player.pseudo }}
     </p>
-    <p class="text-gray-400 text-[10px] font-mono">
+    <p class="text-cream-400 text-[10px] font-mono mt-0.5">
       {{ player.chips }} 💰
     </p>
 
@@ -77,7 +77,7 @@ const playerCards = computed(() => props.player.cards || [])
         class="w-10 h-14 rounded-md border flex items-center justify-center text-xs font-bold shadow-md"
         :class="card.visible
           ? 'bg-white border-gray-300'
-          : 'card-back border-blue-900'"
+          : 'card-back border-pokito-light'"
       >
         <template v-if="card.visible && card.suit">
           <span :class="suitColors[card.suit]">
@@ -85,7 +85,7 @@ const playerCards = computed(() => props.player.cards || [])
           </span>
         </template>
         <template v-else>
-          <span class="text-blue-300/50 text-lg">?</span>
+          <span class="text-pokito-light text-lg">?</span>
         </template>
       </div>
     </div>

@@ -17,6 +17,15 @@ const routes = [
     }
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('@/views/ProfileView.vue'),
+    beforeEnter: () => {
+      const user = useUserStore()
+      if (!user.pseudo || user.isGuest) return { name: 'Home' }
+    }
+  },
+  {
     path: '/waiting/:tableId',
     name: 'WaitingRoom',
     component: () => import('@/views/WaitingRoomView.vue'),

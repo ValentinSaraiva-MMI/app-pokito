@@ -29,8 +29,8 @@ const cards = computed(() => gameStore.mergedMyCards)
         :key="index"
         class="relative w-16 h-22 rounded-lg border-2 flex flex-col items-center justify-center font-bold shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl cursor-default"
         :class="[
-          card.suit ? 'bg-white' : 'card-back border-blue-900',
-          !card.visible ? 'border-gold-400 ring-2 ring-gold-400/30' : 'border-gray-300'
+          card.suit ? 'bg-white' : 'card-back border-pokito-light',
+          !card.visible ? 'border-cream-500 ring-2 ring-cream-500/30' : 'border-gray-300'
         ]"
         :style="{ minHeight: '5.5rem' }"
       >
@@ -70,13 +70,13 @@ const cards = computed(() => gameStore.mergedMyCards)
           <!-- Badge cachée -->
           <span
             v-if="!card.visible"
-            class="absolute -top-2 -right-2 bg-gold-400 text-gray-900 text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow"
+            class="absolute -top-2 -right-2 bg-cream-500 text-pokito-dark text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow"
           >
             🔒
           </span>
         </template>
         <template v-else>
-          <span class="text-blue-300/50 text-2xl">?</span>
+          <span class="text-pokito-light text-2xl">?</span>
         </template>
       </div>
     </TransitionGroup>

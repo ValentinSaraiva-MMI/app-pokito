@@ -28,26 +28,26 @@ function handleQuit() {
       v-if="gameStore.winners.length > 0"
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
     >
-      <div class="bg-gray-800 border border-gray-600 rounded-2xl shadow-2xl w-full max-w-md mx-4 p-8 text-center">
+      <div class="bg-pokito-dark border border-cream-500 rounded-2xl shadow-2xl w-full max-w-md mx-4 p-8 text-center">
         <!-- Titre -->
         <div class="text-4xl mb-2">🏆</div>
-        <h2 class="text-2xl font-poker font-bold text-gold-400 mb-6">Fin de la partie !</h2>
+        <h2 class="text-2xl font-poker font-bold text-cream-500 mb-6">Fin de la partie !</h2>
 
         <!-- Gagnants -->
         <div class="space-y-3 mb-8">
           <div
             v-for="winner in gameStore.winners"
             :key="winner.pseudo"
-            class="flex items-center gap-4 bg-gray-900/60 rounded-xl p-4 border border-gold-400/30"
+            class="flex items-center gap-4 bg-pokito-bg/80 rounded-xl p-4 border border-cream-500/30"
           >
             <img
               :src="getAvatarUrl(winner.pseudo)"
               :alt="winner.pseudo"
-              class="w-14 h-14 rounded-full border-2 border-gold-400"
+              class="w-14 h-14 rounded-full border-2 border-cream-500"
             />
             <div class="text-left">
               <p class="text-white font-bold text-lg">{{ winner.pseudo }}</p>
-              <p class="text-gold-400 text-sm">
+              <p class="text-cream-400 text-sm">
                 {{ winner.score?.text || 'Vainqueur' }}
               </p>
             </div>
@@ -59,15 +59,17 @@ function handleQuit() {
         <div class="flex gap-3">
           <button
             class="flex-1 py-3 rounded-lg font-bold transition-all
-                   bg-gradient-to-r from-emerald-600 to-emerald-500 text-white
-                   hover:from-emerald-500 hover:to-emerald-400"
+                   bg-cream-500 text-pokito-dark border-b-4 border-cream-600
+                   hover:bg-cream-400 hover:translate-y-[2px] hover:border-b-2
+                   active:translate-y-[4px] active:border-b-0"
             @click="handleReplay"
           >
             🔄 Rejouer
           </button>
           <button
             class="flex-1 py-3 rounded-lg font-bold transition-all
-                   bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white"
+                   bg-pokito-light text-cream-400 border-b-4 border-pokito-dark hover:bg-pokito-bg hover:text-cream-500
+                   hover:translate-y-[2px] hover:border-b-2 active:translate-y-[4px] active:border-b-0"
             @click="handleQuit"
           >
             Quitter

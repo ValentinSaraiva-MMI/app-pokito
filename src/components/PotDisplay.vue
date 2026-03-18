@@ -12,7 +12,7 @@ const gameStore = useGameStore()
     </span>
 
     <!-- Pot -->
-    <div class="bg-gray-900/80 backdrop-blur-sm border border-gold-400/30 rounded-xl px-6 py-3 text-center shadow-lg">
+    <div class="bg-pokito-dark/80 backdrop-blur-sm border border-cream-500/30 rounded-xl px-6 py-3 text-center shadow-lg">
       <p class="text-gold-400 text-2xl font-bold font-mono">
         {{ gameStore.game.pot }} 💰
       </p>

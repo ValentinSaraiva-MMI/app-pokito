@@ -77,9 +77,10 @@ function doRaise() {
         <button
           :disabled="raiseAmount < minRaise"
           class="w-full py-2 rounded-lg font-bold text-sm transition-all
-                 bg-gradient-to-r from-orange-600 to-amber-500 text-white
-                 hover:from-orange-500 hover:to-amber-400
-                 disabled:opacity-40 disabled:cursor-not-allowed"
+                 bg-gold-500 text-pokito-dark border-b-4 border-gold-600
+                 hover:bg-gold-400 hover:translate-y-[2px] hover:border-b-2
+                 active:translate-y-[4px] active:border-b-0
+                 disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none disabled:border-b-4"
           @click="doRaise"
         >
           Confirmer la relance ({{ raiseAmount }})
@@ -92,7 +93,8 @@ function doRaise() {
       <!-- Fold -->
       <button
         class="px-4 py-2.5 rounded-lg font-bold text-sm transition-all
-               bg-red-600/80 hover:bg-red-500 text-white shadow-lg hover:shadow-red-500/25"
+               bg-mexican-red text-white border-b-4 border-red-900
+               hover:translate-y-[2px] hover:border-b-2 active:translate-y-[4px] active:border-b-0"
         @click="doFold"
       >
         Se coucher
@@ -102,7 +104,8 @@ function doRaise() {
       <button
         v-if="canCheck"
         class="px-4 py-2.5 rounded-lg font-bold text-sm transition-all
-               bg-blue-600/80 hover:bg-blue-500 text-white shadow-lg hover:shadow-blue-500/25"
+               bg-pokito-light text-cream-400 border-b-4 border-pokito-dark
+               hover:translate-y-[2px] hover:border-b-2 active:translate-y-[4px] active:border-b-0"
         @click="doCheck"
       >
         Parole
@@ -112,7 +115,8 @@ function doRaise() {
       <button
         v-if="!canCheck"
         class="px-4 py-2.5 rounded-lg font-bold text-sm transition-all
-               bg-emerald-600/80 hover:bg-emerald-500 text-white shadow-lg hover:shadow-emerald-500/25"
+               bg-teal-600 text-white border-b-4 border-teal-800
+               hover:translate-y-[2px] hover:border-b-2 active:translate-y-[4px] active:border-b-0"
         @click="doCall"
       >
         Suivre (+{{ callCost }})
@@ -120,10 +124,10 @@ function doRaise() {
 
       <!-- Raise -->
       <button
-        class="px-4 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg"
+        class="px-4 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg border-b-4"
         :class="showRaiseInput
-          ? 'bg-gray-600 hover:bg-gray-500 text-white'
-          : 'bg-gradient-to-r from-orange-600 to-amber-500 text-white hover:from-orange-500 hover:to-amber-400 hover:shadow-amber-500/25'"
+          ? 'bg-gray-600 text-white border-gray-800 hover:translate-y-[2px] hover:border-b-2 active:translate-y-[4px] active:border-b-0'
+          : 'bg-gold-500 text-pokito-dark border-gold-600 hover:translate-y-[2px] hover:border-b-2 active:translate-y-[4px] active:border-b-0'"
         @click="toggleRaise"
       >
         {{ showRaiseInput ? 'Annuler' : 'Relancer' }}
